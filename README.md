@@ -1,109 +1,113 @@
-Library Management System
+# Library Management System
 
-Overview
+## Overview
+The **Library Management System** is designed to streamline library operations, including book inventory management, member registration, staff assistance, and loan transactions. The system supports core functionalities such as issuing and returning books, maintaining member records, and managing library staff.
 
-The Library Management System is designed to manage the operations and resources of a library, including book inventory, memberships, staff, and loan transactions. The system supports key functionalities like issuing and returning books, maintaining member records, and managing library staff.
+## Components
 
-Components
+### 1. Library
+- **Attributes**:
+  - `List of books`: Maintains all books in the library's inventory.
+  - `List of members`: Records all registered library members.
+- **Methods**:
+  - `addBook(Book)`: Adds a new book to the library's inventory.
+  - `removeBook(Book)`: Removes a book from the inventory.
+  - `registerMember(LibraryMember)`: Registers a new library member.
 
-1. Library
-   
-Attributes:
-List of books
-List of members
+---
 
-Methods:
-addBook(Book): Adds a new book to the library's inventory.
-removeBook(Book): Removes a book from the inventory.
-registerMember(LibraryMember): Registers a new library member.
+### 2. Book
+- **Attributes**:
+  - `isbn (String)`: Unique identifier for the book.
+  - `title (String)`: Title of the book.
+  - `author (String)`: Author of the book.
+  - `status (String)`: Availability status of the book (e.g., Available, Borrowed).
+  - `publicationYear (int)`: Year the book was published.
+- **Methods**:
+  - `getInfo()`: Retrieves detailed information about the book.
 
-2. Book
-   
-Attributes:
-isbn (String): Unique identifier for the book.
-title (String): Title of the book.
-author (String): Author of the book.
-status (String): Availability status of the book.
-publicationYear (int): Year of publication.
+---
 
-Methods:
-getInfo(): Retrieves information about the book.
+### 3. Library Member
+- **Attributes**:
+  - `List of borrowed books`: Keeps track of books borrowed by the member.
+- **Methods**:
+  - `borrowBook(Book, int): LoanTransaction`: Initiates the borrowing process by creating a loan transaction.
+  - `returnBook(LoanTransaction)`: Processes the return of a borrowed book.
 
-3. Library Member
-   
-Attributes:
-List of borrowed books.
+---
 
-Methods:
-borrowBook(Book, int): LoanTransaction: Initiates the borrowing process.
-returnBook(LoanTransaction): Returns a borrowed book.
+### 4. Loan Transaction
+- **Attributes**:
+  - `transactionId (String)`: Unique identifier for the loan transaction.
+  - `member (LibraryMember)`: The library member involved in the transaction.
+  - `book (Book)`: The book being borrowed or returned.
+  - `borrowedDate (Date)`: The date the book was borrowed.
+  - `dueDate (Date)`: The due date for returning the book.
+- **Methods**:
+  - `completeTransaction()`: Marks the loan transaction as complete.
 
-4. Loan Transaction
-   
-Attributes:
-transactionId (String): Unique identifier for the transaction.
-member (LibraryMember): The member involved in the transaction.
-book (Book): The book being borrowed or returned.
-borrowedDate (Date): The date the book was borrowed.
-dueDate (Date): The due date for returning the book.
+---
 
-Methods:
-completeTransaction(): Marks the transaction as complete.
+### 5. Librarian
+- **Attributes**:
+  - `name (String)`: The librarian's name.
+  - `id (String)`: The librarian's unique ID.
+  - `contactInfo (String)`: Contact details of the librarian.
+- **Methods**:
+  - `receiveBook(LoanTransaction)`: Processes the return of a book.
+  - `issueBook(LoanTransaction)`: Issues a book to a library member.
+  - `getDetails()`: Retrieves the librarian's information.
 
-5. Librarian
-   
-Attributes:
+---
 
-name (String): Librarian's name.
-id (String): Librarian's ID.
-contactInfo (String): Contact information.
+### 6. Staff
+- **Attributes**:
+  - `employeeId (String)`: Staff member's unique ID.
+  - `position (String)`: Staff member's position in the library.
+- **Methods**:
+  - `manageInventory()`: Manages the library's inventory.
+  - `assistMember(LibraryMember)`: Assists library members with their queries or issues.
 
-Methods:
+---
 
-receiveBook(LoanTransaction): Processes the return of a book.
-issueBook(LoanTransaction): Issues a book to a library member.
-getDetails(): Retrieves the librarian's details.
+## Relationships
 
-6. Staff
-   
-Attributes:
+- **Library and Librarian**: A library employs one or more librarians to manage operations.
+- **Library and Library Member**: Members register with the library and can borrow books.
+- **Library Member and Loan Transaction**: Members can perform multiple loan transactions.
+- **Loan Transaction and Book**: Each transaction involves issuing or returning a specific book.
+- **Librarian and Loan Transaction**: Librarians facilitate book issue and return transactions.
 
-employeeId (String): Staff member's ID.
-position (String): Staff member's position.
+---
 
-Methods:
+## Usage
 
-manageInventory(): Manages the library's inventory.
-assistMember(LibraryMember): Assists library members.
+### Adding Books
+- Librarians or staff can add books to the inventory using the `addBook()` function.
 
-Relationships
+### Registering Members
+- Library members are registered using the `registerMember()` function.
 
-Library and Librarian:
-The library employs one or more librarians who manage library operations.
+### Issuing and Returning Books
+- Members borrow books by creating a loan transaction (`borrowBook()`).
+- The transaction is marked complete when the book is returned (`returnBook()`).
 
-Library and Library Member:
-Members register with the library and can borrow books.
+### Managing Inventory
+- Staff members manage the library's inventory using the `manageInventory()` method and assist library members with their needs.
 
-Library Member and Loan Transaction:
-Members can perform one or more loan transactions.
+---
 
-Loan Transaction and Book:
-A transaction involves issuing or returning a specific book.
+## Contributors
+- **Group Number**: [Group 01]
+- **Team Members**:
+  1. 22UG1-0390_K.P.Dilhara
+  2. 22ug1-0936_Bangamuwage C.A.H.
+  3. 22ug1-0471_K.K.Pahan Bimsara
+  4. 22ug1-0082_H.V.Rashini Nilumika
+  5. 22ug1-0753_T.R.A.Dinesh Rodriguez
+  6. 22ug1-0923_S.Piranavan
+  7. 22ug1-0480_H.A.L.Ruwanya
 
-Librarian and Loan Transaction:
-Librarians facilitate loan transactions.
+---
 
-Usage
-
-Adding Books:
-The librarian or staff can add books to the library's inventory.
-
-Registering Members:
-Members are registered through the registerMember() function.
-
-Issuing and Returning Books:
-Members borrow books by initiating a loan transaction.
-The transaction is completed when the book is returned.
-
-Managing Inventory:
-Staff manage the library's inventory and assist members.
