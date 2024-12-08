@@ -105,11 +105,11 @@ The **Library Management System** is designed to streamline library operations, 
 - **Team Members**:
   1. 22UG1-0390_K.P.Dilhara
   2. 22ug1-0936_Bangamuwage C.A.H.
-  3. 22ug1-0471_K.K.Pahan Bimsara
+  3. 22ug1-0480_H.A.L.Ruwanya
   4. 22ug1-0082_H.V.Rashini Nilumika
   5. 22ug1-0753_T.R.A.Dinesh Rodriguez
   6. 22ug1-0923_S.Piranavan
-  7. 22ug1-0480_H.A.L.Ruwanya
+  7. 22ug1-0471_K.K.Pahan Bimsara
 
 ---
 
