@@ -9,10 +9,12 @@ The **Library Management System** is designed to streamline library operations, 
 - **Attributes**:
   - `List of books`: Maintains all books in the library's inventory.
   - `List of members`: Records all registered library members.
+  - `List of Staff`: Records all library staff.
 - **Methods**:
   - `addBook(Book)`: Adds a new book to the library's inventory.
   - `removeBook(Book)`: Removes a book from the inventory.
   - `registerMember(LibraryMember)`: Registers a new library member.
+  - `removeMember(LibraryMember)`: Remove a library member.
 
 ---
 
